@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:SampleLayoutApp.ViewModels"
+             xmlns:view="clr-namespace:SampleLayoutApp.Views"
+             x:DataType="viewModel:FlexLayoutViewModel"
+             x:Class="SampleLayoutApp.Views.FlexLayoutPage"
+             Title="FlexLayoutPage">
+    <Grid HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand"
+          BackgroundColor="{StaticResource Gray100}"
+          ColumnDefinitions="*"
+          RowSpacing="16"
+          RowDefinitions="Auto, Auto, *, *">
+
+        <Button Grid.Row="0" Text="Toggle direction"
+                Command="{Binding ToggleFlexDirectionCommand}"/>
+
+        <HorizontalStackLayout Grid.Row="1" Spacing="16">
+            <Label Text="Direction: "
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"/>
+
+            <Label Text="{Binding MainDirection, StringFormat='ViewMode={0}'}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   />
+
+            <Label Text="{Binding Source={Reference mainFlexLayout}, Path=Direction, StringFormat='FlexLayout={0}'}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"/>
+        </HorizontalStackLayout>
+        
+
+        <FlexLayout Direction="{Binding MainDirection}"
+                    x:Name="mainFlexLayout"
+                    Grid.Row="2"
+                    FlowDirection="MatchParent"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="{StaticResource Gray200}">
+            <BoxView Color="Red" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="Blue" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="yellow" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="Lime" WidthRequest="64" HeightRequest="64" />
+        </FlexLayout>
+
+        <StackLayout Orientation="{Binding Orientation}"
+                     Grid.Row="3"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <BoxView Color="Red" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="Blue" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="yellow" WidthRequest="64" HeightRequest="64" />
+            <BoxView Color="Lime" WidthRequest="64" HeightRequest="64" />
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

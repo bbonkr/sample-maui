@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SampleLayoutApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SampleLayoutApp"
+    xmlns:viewModel="clr-namespace:SampleLayoutApp.ViewModels"
+    xmlns:view="clr-namespace:SampleLayoutApp.Views"
+    x:DataType="viewModel:LayoutsViewModel"
+    Shell.FlyoutBehavior="Disabled">
+
+    <FlyoutItem Title="Layouts" Route="{x:Static local:RouteNames.Layouts}">
+
+        <ShellContent Title="Layouts"
+                      ContentTemplate="{DataTemplate view:LayoutsPage}"
+                      Route="{x:Static local:RouteNames.Layouts}" />
+    </FlyoutItem>
+    
+
+</Shell>
