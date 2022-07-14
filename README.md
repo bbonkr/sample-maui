@@ -1,6 +1,11 @@
 ## Environment
 
-.NET 6.0.300
+* macOS 12.4
+* Apple M1 Max
+* .NET SDK 6.0.300
+* maui SDK 6.0.300
+* Visual Studio 2022 for Mac 17.3 Preview 2 (17.3 build 1038)
+
 
 ## FlexLayout
 
