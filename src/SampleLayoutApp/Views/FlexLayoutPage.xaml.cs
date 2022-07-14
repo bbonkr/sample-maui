@@ -17,9 +17,9 @@ public partial class FlexLayoutPage : ContentPage
 
     private void MainFlexLayout_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(FlexLayout.Direction))
-        {
-            ((IView)sender).InvalidateArrange();
-        }
+        // if (e.PropertyName == nameof(FlexLayout.Direction))
+        // {
+        //     ((IView)sender).InvalidateArrange();
+        // }
     }
 }
